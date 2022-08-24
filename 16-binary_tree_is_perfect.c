@@ -26,26 +26,6 @@ size_t height(const binary_tree_t *tree)
 }
 
 /**
- * is_full - checks if a binary tree is full
- * @tree: root of the tree
- *
- * Return: 1 if full else 0
- */
-int is_full(const binary_tree_t *tree)
-{
-	int r, l;
-
-	if (!tree)
-		return (0);
-	if (!tree->right && !tree->left)
-		return (1);
-	l = is_full(tree->left);
-	r = is_full(tree->right);
-
-	return (l && r ? 1 : 0);
-}
-
-/**
  * binary_tree_is_perfect - checks if a tree is perfect
  * @tree: root of the tree
  *
