@@ -67,8 +67,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (r != l)
 		return (0);
-	if (is_full(tree))
-		return (1);
-	return (0);
+	return is_full(tree);
 }
 
