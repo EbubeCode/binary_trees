@@ -54,6 +54,7 @@ int is_full(const binary_tree_t *tree)
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	size_t r = 0, l = 0;
+	int rp = 0, lp = 0;
 
 	if (!tree)
 		return (0);
@@ -67,6 +68,9 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (r != l)
 		return (0);
-	return is_full(tree);
+	rp = binary_tree_is_perfect(tree->right);
+	lp = binary_tree_is_perfect(tree->left);
+
+	return (rp && lp ? 1 : 0);
 }
 
